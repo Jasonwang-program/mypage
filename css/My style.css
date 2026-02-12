@@ -1,0 +1,642 @@
+/* 字型 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+/* 塗鴨風格配色 */
+:root {
+    /* ✅ 統一順序：light（最亮） → base（主色） → mid（過渡） → dark（加深） → deepest（最深） */
+    /* ✅ 12 種主題群組（每組 5 色），維持老師「黑路」：灰底＋冷夜＋暖鏽＋深黑＋金屬＋亮點，並延伸出更多城市情境 */
+
+    /* 01｜混凝土 / 城市底色 */
+    --graffiti-concrete-fog: #e3e3e5;
+    /* 混凝土薄霧 light */
+    --graffiti-concrete-ash: #bdbdbf;
+    /* 水泥灰塵 base */
+    --graffiti-road-dust: #a6a7aa;
+    /* 路面粉塵灰 mid */
+    --graffiti-smog-gray: #8a8c8f;
+    /* 工業霧霾 dark */
+    --graffiti-wall-crack: #5f6163;
+    /* 牆面裂紋 deepest */
+
+    /* 02｜冷色系 / 夜城感 */
+    --graffiti-cold-glow: #8cb7c6;
+    /* 冷光薄霓 light */
+    --graffiti-rusty-blue: #5580a0;
+    /* 生鏽藍漆 base */
+    --graffiti-neon-ocean: #3a6f7d;
+    /* 退色霓虹藍 mid */
+    --graffiti-toxic-teal: #1f4e4a;
+    /* 污濁綠藍 dark */
+    --graffiti-deep-alley: #002c2f;
+    /* 深巷暗影 deepest */
+
+    /* 03｜暖色系 / 鏽蝕與塗鴉 */
+    --graffiti-heat-glow: #ff7a4d;
+    /* 熱光塗鴉橘 light */
+    --graffiti-burnt-ochre: #cc8a4d;
+    /* 燒焦赭石 base */
+    --graffiti-brick-dust: #a14a3b;
+    /* 磚牆粉塵 mid */
+    --graffiti-rust-orange: #9e5b2a;
+    /* 鐵鏽橘 dark */
+    --graffiti-dried-blood: #7a2e2a;
+    /* 乾涸血漬 deepest */
+
+    /* 04｜暗黑系 / 頹廢核心 */
+    --graffiti-charcoal-core: #3a3a3c;
+    /* 焦炭核心灰 light */
+    --graffiti-basement-shadow: #232122;
+    /* 地下室陰影 base */
+    --graffiti-asphalt-black: #1b1b1b;
+    /* 柏油黑 mid */
+    --graffiti-oil-stain: #0f1412;
+    /* 油漬暗黑 dark */
+    --graffiti-ink-black: #090a0b;
+    /* 墨黑深底 deepest */
+
+    /* 05｜金屬 / 工業感 */
+    --graffiti-aluminum-sheen: #aeb6b8;
+    /* 拉絲鋁光 light */
+    --graffiti-steel-mist: #6f7c7a;
+    /* 鋼鐵霧感 base */
+    --graffiti-riveted-iron: #5d6468;
+    /* 鉚釘鐵灰 mid */
+    --graffiti-lead-gray: #4b4e50;
+    /* 鉛灰色 dark */
+    --graffiti-gunmetal: #2f3538;
+    /* 槍鐵灰 deepest */
+
+    /* 06｜點綴 / 塗鴉亮色 */
+    --graffiti-acid-yellow: #c2c94b;
+    /* 酸性黃 light */
+    --graffiti-toxic-lime: #7e8f3a;
+    /* 有毒萊姆 base */
+    --graffiti-electric-cyan: #2fb6c4;
+    /* 電光青 mid */
+    --graffiti-hot-coral: #ff5a3d;
+    /* 熱珊瑚橘 dark */
+    --graffiti-faded-purple: #5a4a63;
+    /* 退色紫噴漆 deepest */
+
+    /* 07｜日光水泥 / 曝曬街景（更乾淨的灰階，用於大面積背景） */
+    --graffiti-sun-bleached: #f4f4f2;
+    /* 曝曬粉白 light */
+    --graffiti-bleach-concrete: #d6d6d3;
+    /* 漂白水泥 base */
+    --graffiti-dry-plaster: #bfc0be;
+    /* 乾粉灰 mid */
+    --graffiti-heat-dust: #9c9d9b;
+    /* 熱塵灰 dark */
+    --graffiti-parking-gray: #6d6f70;
+    /* 停車場灰 deepest */
+
+    /* 08｜霧雨玻璃 / 潮濕反光（適合卡片、模糊玻璃 UI） */
+    --graffiti-glass-fog: #eef2f1;
+    /* 玻璃霧白 light */
+    --graffiti-glass-silver: #c8d1d0;
+    /* 玻璃銀灰 base */
+    --graffiti-rain-streak: #9aa8a7;
+    /* 雨痕灰 mid */
+    --graffiti-wet-steel: #6d7c7d;
+    /* 濕鋼 dark */
+    --graffiti-window-night: #2a3a40;
+    /* 窗夜深藍 deepest */
+
+    /* 09｜港口海霧 / 冷風鹽感（冷灰 + 深藍綠，穩重耐看） */
+    --graffiti-salt-mist: #e7ecea;
+    /* 鹽霧白 light */
+    --graffiti-hull-gray: #b5c0be;
+    /* 船殼灰 base */
+    --graffiti-dock-steel: #7f8e90;
+    /* 碼頭鋼 mid */
+    --graffiti-harbor-teal: #2b5560;
+    /* 港口藍綠 dark */
+    --graffiti-deep-sea: #0b2b33;
+    /* 深海 darkest */
+
+    /* 10｜警示標線 / 工安色票（高對比：按鈕、提示、狀態最實用） */
+    --graffiti-safety-cream: #fff3d6;
+    /* 工安奶油 light */
+    --graffiti-warning-yellow: #f2c84b;
+    /* 警示黃 base */
+    --graffiti-caution-amber: #e19b2d;
+    /* 注意琥珀 mid */
+    --graffiti-cone-orange: #e05a2a;
+    /* 三角錐橘 dark */
+    --graffiti-hazard-red: #b33a2b;
+    /* 危險紅 deepest */
+
+    /* 11｜霓虹招牌 / 夜店反差（亮點更亮、底更黑：主視覺用） */
+    --graffiti-neon-pink: #ff4fa3;
+    /* 霓虹粉 light */
+    --graffiti-neon-cyan: #2ff0e6;
+    /* 霓虹青 base */
+    --graffiti-neon-violet: #7a52ff;
+    /* 霓虹紫 mid */
+    --graffiti-sign-blue: #103a59;
+    /* 招牌藍 dark */
+    --graffiti-noir-black: #050608;
+    /* 黑鏡夜 deepest */
+
+    /* 12｜復古鏽銅 / 老工廠（偏棕銅與深綠藍，復古工業味） */
+    --graffiti-copper-sheen: #f1d0b0;
+    /* 銅光米 light */
+    --graffiti-aged-copper: #c27a45;
+    /* 老銅 base */
+    --graffiti-rust-patina: #8c5a33;
+    /* 鏽綠銅棕 mid */
+    --graffiti-foundry-brown: #5c3a2a;
+    /* 鑄造棕 dark */
+    --graffiti-factory-ink: #1b2b2a;
+    /* 工廠墨綠 deepest */
+
+    /* ✅ 加碼 5 組（13~17），整體更「亮、暖」，但仍保留老師黑路：light → base → mid → dark → deepest */
+
+    /* 13｜日落粉牆 / 溫暖街角 */
+    --graffiti-sunset-plaster: #fff1e6;
+    /* 日落粉牆 light */
+    --graffiti-peach-stucco: #f7c9b2;
+    /* 蜜桃灰泥 base */
+    --graffiti-terracotta-warm: #e58a63;
+    /* 暖陶土 mid */
+    --graffiti-brick-sienna: #c96545;
+    /* 磚紅赭 dark */
+    --graffiti-cocoa-shadow: #5a2c24;
+    /* 可可陰影 deepest */
+
+    /* 14｜奶油砂岩 / 暖石質感 */
+    --graffiti-cream-sand: #fff7e8;
+    /* 奶油砂 light */
+    --graffiti-sandstone: #e7c9a6;
+    /* 砂岩 base */
+    --graffiti-honey-clay: #dfa26b;
+    /* 蜂蜜陶 mid */
+    --graffiti-caramel-brown: #b8733d;
+    /* 焦糖棕 dark */
+    --graffiti-roasted-umber: #5a3a24;
+    /* 烘焙赭 deepest */
+
+    /* 15｜晨光咖啡 / 溫柔拿鐵 */
+    --graffiti-milk-foam: #fff9f2;
+    /* 奶泡白 light */
+    --graffiti-latte-cream: #efd9c6;
+    /* 拿鐵奶 base */
+    --graffiti-toffee: #d9a07a;
+    /* 太妃糖 mid */
+    --graffiti-espresso: #8b4e34;
+    /* 濃縮咖 dark */
+    --graffiti-dark-cacao: #3a2018;
+    /* 深可可 deepest */
+
+    /* 16｜午後金光 / 溫暖金屬 */
+    --graffiti-golden-haze: #fff4d9;
+    /* 金霧 light */
+    --graffiti-brass-glow: #e8c36a;
+    /* 黃銅光 base */
+    --graffiti-amber-gold: #d49a3a;
+    /* 琥珀金 mid */
+    --graffiti-burnished-bronze: #9a5a2a;
+    /* 熱鍛青銅 dark */
+    --graffiti-forge-brown: #402214;
+    /* 鍛造棕 deepest */
+
+    /* 17｜花市夕陽 / 暖粉亮點 */
+    --graffiti-rose-milk: #fff0f4;
+    /* 玫瑰奶 light */
+    --graffiti-blush-peach: #f7b7b2;
+    /* 粉桃 base */
+    --graffiti-coral-glow: #ff7a5c;
+    /* 珊瑚光 mid */
+    --graffiti-rosewood: #b34b45;
+    /* 玫瑰木 dark */
+    --graffiti-wine-shadow: #4a1d1e;
+    /* 酒紅陰影 deepest */
+}
+
+/* 文字相關 */
+.fw-100 {
+    font-weight: 100;
+}
+
+.fw-200 {
+    font-weight: 200;
+}
+
+.fw-300 {
+    font-weight: 300;
+}
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.fw-800 {
+    font-weight: 800;
+}
+
+.fw-900 {
+    font-weight: 900;
+}
+
+/* 01｜霓虹紫 × 柏油黑陰影（鮮豔、未來感、街頭塗鴉） */
+.title-01 {
+    font-size: 96px;
+    font-weight: 900;
+    color: var(--graffiti-neon-violet);
+    text-shadow:
+        2px 2px 0 var(--graffiti-asphalt-black),
+        4px 4px 8px rgba(0, 0, 0, 0.6);
+    letter-spacing: 3px;
+}
+
+/* 02｜暖系：夕陽霓虹（溫暖、醒目、街頭感） */
+.title-02 {
+    font-size: 96px;
+    font-weight: 900;
+    color: var(--graffiti-hot-coral);
+    text-shadow:
+        2px 2px 0 var(--graffiti-ink-black),
+        4px 4px 10px rgba(122, 46, 42, 0.55),
+        0 0 18px rgba(255, 90, 61, 0.35);
+    letter-spacing: 3px;
+}
+
+/* 03｜金屬系：拉絲黃銅（高級、厚重、工業金屬感） */
+.title-03 {
+    font-size: 96px;
+    font-weight: 900;
+    color: var(--graffiti-brass-glow);
+    text-shadow:
+        1px 1px 0 var(--graffiti-gunmetal),
+        3px 3px 0 var(--graffiti-lead-gray),
+        6px 6px 14px rgba(15, 20, 18, 0.55);
+    letter-spacing: 3px;
+}
+
+/* 04｜冷系：霓虹冰藍（乾淨、科技、夜城冷光） */
+.title-04 {
+    font-size: 96px;
+    font-weight: 900;
+    color: var(--graffiti-electric-cyan);
+    text-shadow:
+        2px 2px 0 var(--graffiti-deep-alley),
+        4px 4px 10px rgba(0, 44, 47, 0.55),
+        0 0 18px rgba(47, 182, 196, 0.35);
+    letter-spacing: 3px;
+}
+
+.Contents-01 {
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--graffiti-steel-mist);
+}
+
+.Contents-02 {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--graffiti-lead-gray);
+}
+
+.Contents-03 {
+    font-size: 14px;
+    font-weight: 200;
+    color: var(--graffiti-smog-gray);
+}
+
+/* . ==> class --> css */
+/* # ==> id --> javascript */
+/* =====================================================================
+  Travel UI Enhancements (Titles + Roller)
+  - 不新增任何 class，只補強你已存在的 title-* 與 roller 相關選擇器
+  - 以「旅遊網站」視覺為導向：清爽、溫暖、玻璃感、可點擊卡片
+   ===================================================================== */
+
+/* ---------- Design Tokens：後續調整更方便 ---------- */
+:root {
+    /* Roller 卡片 */
+    --roller-radius: 16px;
+    --roller-inner-radius: 12px;
+    --roller-border: rgba(0, 0, 0, 0.06);
+    --roller-border-hover: rgba(0, 0, 0, 0.1);
+    --roller-shadow: 0 10px 26px rgba(0, 0, 0, 0.1);
+    --roller-shadow-hover: 0 18px 44px rgba(0, 0, 0, 0.18);
+    --roller-lift: -6px;
+
+    /* 圖片質感 */
+    --roller-img-sat: 1.05;
+    --roller-img-contrast: 1.03;
+    --roller-img-bright: 1.02;
+    --roller-img-hover-sat: 1.18;
+    --roller-img-hover-contrast: 1.06;
+    --roller-img-hover-bright: 1.05;
+    --roller-img-scale: 1.06;
+
+    /* Overlay（暖陽海岸玻璃） */
+    --roller-overlay-blur: 8px;
+    --roller-overlay-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+    --roller-overlay-opacity: 1;
+    --roller-overlay-start-left: -110%;
+    --roller-overlay-duration: 0.55s;
+
+    /* Heading（全站標題一致性） */
+    --title-letterspace-lg: 1.2px;
+    --title-letterspace-md: 0.8px;
+    --title-shadow-soft: 0 6px 18px rgba(0, 0, 0, 0.12);
+    --title-shadow-card: 0 8px 18px rgba(0, 0, 0, 0.08);
+    --title-underline-width: 64px;
+    --title-underline-height: 3px;
+}
+
+/* =====================================================================
+   Title System：補齊你沒有的「標題/層級」視覺（h1~h4 + .h1~.h4）
+   ===================================================================== */
+
+/* 基礎標題：讓旅遊網站版面更乾淨、有層次 */
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+    font-family:
+        'Noto Sans TC',
+        system-ui,
+        -apple-system,
+        'Segoe UI',
+        Arial,
+        sans-serif;
+    text-rendering: geometricPrecision;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 大標題（首頁主標/區塊大標） */
+h1,
+.h1 {
+    letter-spacing: var(--title-letterspace-lg);
+    text-shadow: var(--title-shadow-soft);
+}
+
+/* 區塊標題（次標題） */
+h2,
+.h2 {
+    letter-spacing: 1px;
+    text-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* 卡片標題（景點名稱） */
+h3,
+.h3,
+h4,
+.h4 {
+    letter-spacing: var(--title-letterspace-md);
+    line-height: 1.25;
+    color: rgba(15, 18, 25, 0.92);
+    text-shadow: var(--title-shadow-card);
+}
+
+/* 卡片標題底線裝飾：只針對卡片內容區（你目前結構是 .box03 內的 .h3/.h4） */
+.box03 .h3::after,
+.box03 h3::after,
+.box03 .h4::after,
+.box03 h4::after {
+    content: '';
+    display: block;
+    width: var(--title-underline-width);
+    height: var(--title-underline-height);
+    margin: 10px auto 0;
+    border-radius: 99px;
+    background: linear-gradient(90deg, rgba(255, 170, 60, 0), rgba(255, 170, 60, 0.85), rgba(255, 170, 60, 0));
+    opacity: 0.9;
+}
+
+/* hover：標題更清晰（可點擊回饋） */
+.roller-1:hover .h3,
+.roller-1:hover h3,
+.roller-1:hover .h4,
+.roller-1:hover h4 {
+    color: rgba(10, 12, 18, 0.98);
+}
+
+/* 讓內容文更好讀（旅遊文案） */
+p {
+    line-height: 1.8;
+    letter-spacing: 0.2px;
+}
+
+/* =====================================================================
+  Roller：卡片 hover overlay（不新增 class，兼容 .roller01 / .roller_box / .roller-2_box）
+   ===================================================================== */
+
+/* 你原本有 .roller：保留其定位需求 */
+.roller {
+    position: relative;
+    overflow: hidden;
+}
+
+/* 主要卡片：你 HTML 用的是 .roller-1 + .box03 */
+.roller-1 {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--roller-radius);
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid var(--roller-border);
+    box-shadow: var(--roller-shadow);
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+    backdrop-filter: blur(6px);
+}
+
+/* hover：浮起 + 陰影加深 */
+.roller-1:hover {
+    transform: translateY(var(--roller-lift));
+    box-shadow: var(--roller-shadow-hover);
+    border-color: var(--roller-border-hover);
+}
+
+/* 圖片：更旅遊感（飽和/對比/亮度） */
+.roller-1 img {
+    border-radius: var(--roller-inner-radius);
+    transition:
+        transform 0.6s ease,
+        filter 0.6s ease;
+    filter: saturate(var(--roller-img-sat)) contrast(var(--roller-img-contrast)) brightness(var(--roller-img-bright));
+}
+.roller-1:hover img {
+    transform: scale(var(--roller-img-scale));
+    filter: saturate(var(--roller-img-hover-sat)) contrast(var(--roller-img-hover-contrast))
+        brightness(var(--roller-img-hover-bright));
+}
+
+/* Overlay：同時支援你可能會用到的寫法 */
+.roller .roller_box,
+.roller-1 .roller01,
+.roller-1 .roller-2_box {
+    position: absolute;
+    inset: 0;
+    left: var(--roller-overlay-start-left);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+
+    /* ✅ 修正：linear-gradient 應該用 background */
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 200, 120, 0.35) 35%,
+        rgba(255, 120, 80, 0.35) 65%,
+        rgba(40, 20, 60, 0.55) 100%
+    );
+
+    backdrop-filter: blur(var(--roller-overlay-blur));
+    -webkit-backdrop-filter: blur(var(--roller-overlay-blur));
+    box-shadow: var(--roller-overlay-shadow);
+
+    opacity: 0;
+    transition:
+        left var(--roller-overlay-duration) cubic-bezier(0.2, 0.9, 0.2, 1),
+        opacity 0.45s ease;
+}
+
+/* hover：滑入 + 淡入 */
+.roller-1:hover .roller01,
+.roller:hover .roller_box,
+.roller-1:hover .roller-2_box {
+    left: 0;
+    opacity: var(--roller-overlay-opacity);
+}
+
+/* Overlay 內按鈕質感（不新增 class，只鎖 overlay 裡面的 a） */
+.roller-1 .roller01 a,
+.roller .roller_box a,
+.roller-1 .roller-2_box a {
+    transform: translateY(6px);
+    transition:
+        transform 0.35s ease,
+        filter 0.35s ease;
+    filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.22));
+}
+.roller-1:hover .roller01 a,
+.roller:hover .roller_box a,
+.roller-1:hover .roller-2_box a {
+    transform: translateY(0);
+    filter: drop-shadow(0 14px 26px rgba(0, 0, 0, 0.3));
+}
+
+/* 小加分：卡片內文字色更一致（不會過黑/過灰） */
+.roller-1 .Contents-01,
+.roller-1 .Contents-02,
+.roller-1 .Contents-03 {
+    color: rgba(20, 20, 20, 0.8);
+}
+
+/* =====================================================================
+  Optional: 讓 title-01~04 更適合旅遊網站（保留你原本風格，但提高可讀性）
+  - 覆寫為更「乾淨」的陰影與字距，不改 class 名稱
+   ===================================================================== */
+
+.title-01,
+.title-02,
+.title-03,
+.title-04 {
+    line-height: 1.05;
+    word-break: keep-all;
+    text-wrap: balance;
+}
+
+/* 若你覺得 96px 太大，可只改這個變數或直接改下面的 font-size */
+@media (max-width: 768px) {
+    .title-01,
+    .title-02,
+    .title-03,
+    .title-04 {
+        font-size: 56px;
+        letter-spacing: 2px;
+    }
+}
+/* =====================================================================
+   Material 3 (Material Theme Builder / material-color-utilities) 接入層
+   目的：
+   1) 你用做法1自動生成的 css/material-theme.css 會提供 --md-sys-color-*
+   2) 這裡把 Material tokens「映射」成你現有系統會用到的變數（--accent、--text-strong...）
+   3) 你的 roller / box / title / button 不用大改，就能跟著主題色自動換色
+   使用方式請看我回覆的步驟
+   ===================================================================== */
+
+/* 如果 material-theme.css 尚未載入，這些 var() 會走 fallback（你原本的 graffiti 色票） */
+:root {
+    /* 主要品牌色（你原本用 --accent / --accent-warm） */
+    --accent: var(--md-sys-color-primary, var(--graffiti-electric-cyan));
+    --accent-warm: var(--md-sys-color-tertiary, var(--graffiti-hot-coral));
+
+    /* 文字/背景（提高全站一致性） */
+    --text-strong: var(--md-sys-color-on-surface, rgba(12, 14, 18, 0.92));
+    --text: var(--md-sys-color-on-surface-variant, rgba(20, 24, 32, 0.78));
+    --text-mute: color-mix(in srgb, var(--text) 70%, transparent);
+
+    /* 表面/卡片（你原本 glass 系列） */
+    --surface: var(--md-sys-color-surface, rgba(255, 255, 255, 1));
+    --surface-variant: var(--md-sys-color-surface-variant, rgba(245, 245, 245, 1));
+    --glass-strong: color-mix(in srgb, var(--surface) 92%, white);
+    --glass: color-mix(in srgb, var(--surface) 84%, transparent);
+
+    /* 邊線（outline） */
+    --line-soft: color-mix(in srgb, var(--md-sys-color-outline, #000) 12%, transparent);
+    --line-mid: color-mix(in srgb, var(--md-sys-color-outline, #000) 18%, transparent);
+
+    /* Focus ring：跟著 primary 走（可用性大加分） */
+    --focus-ring: 0 0 0 4px color-mix(in srgb, var(--accent) 22%, transparent);
+    --focus-ring-warm: 0 0 0 4px color-mix(in srgb, var(--accent-warm) 20%, transparent);
+}
+
+/* 全站：用 Material 的 surface 當底色（保留你原本的漸層，但更一致） */
+body {
+    color: var(--text);
+}
+
+/* Buttons：改成吃 --accent / --accent-warm（主題換色時按鈕也會換） */
+button,
+input[type='button'],
+input[type='submit'],
+input[type='reset'],
+.btn {
+    background: linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--accent) 92%, white),
+        color-mix(in srgb, var(--accent-warm) 82%, white)
+    );
+}
+
+/* Forms：focus 顏色跟著主題 */
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+}
+
+/* Links：hover 跟著主題 */
+a:hover {
+    color: var(--accent);
+    text-decoration-color: color-mix(in srgb, var(--accent) 55%, transparent);
+}

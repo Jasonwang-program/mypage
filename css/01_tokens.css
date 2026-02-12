@@ -1,0 +1,96 @@
+/* =========================
+    Tokens / 色票變數（可切換主題）
+    用法：
+    - 預設：不加任何 class
+    - 暖亮：body 加 class="theme-warm"
+    - 中性亮：body 加 class="theme-light"
+    - 夜城冷：body 加 class="theme-night"
+   ========================= */
+
+/* 共同 tokens */
+:root {
+    --radius: 18px;
+    --shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+    --container: 1100px;
+    --gutter: 40px;
+}
+
+/* 預設（偏暗） */
+:root {
+    --bg: #0f1115;
+    --bg2: #141821;
+
+    --card: rgba(255, 255, 255, 0.06);
+    --border: rgba(255, 255, 255, 0.12);
+
+    --text: #e8eefc;
+    --muted: rgba(255, 255, 255, 0.75);
+
+    --accent: #50d0ff;
+    --accent2: #ff7a59;
+
+    --glowA: rgba(80, 208, 255, 0.18);
+    --glowB: rgba(255, 122, 89, 0.12);
+
+    --bgDeep: #0b0d12;
+}
+
+/* 暖亮（推薦） */
+body.theme-warm {
+    --bg: #14110f;
+    --bg2: #1b1612;
+
+    --card: rgba(255, 255, 255, 0.09);
+    --border: rgba(255, 255, 255, 0.16);
+
+    --text: #fff3ea;
+    --muted: rgba(255, 243, 234, 0.78);
+
+    --accent: #ffb86b;
+    --accent2: #ff6b6b;
+
+    --glowA: rgba(255, 184, 107, 0.22);
+    --glowB: rgba(255, 107, 107, 0.14);
+
+    --bgDeep: #0f0c0a;
+}
+
+/* 中性亮（更乾淨） */
+body.theme-light {
+    --bg: #14161a;
+    --bg2: #1a1d23;
+
+    --card: rgba(255, 255, 255, 0.1);
+    --border: rgba(255, 255, 255, 0.18);
+
+    --text: #f3f6ff;
+    --muted: rgba(243, 246, 255, 0.78);
+
+    --accent: #7dd3fc;
+    --accent2: #fbbf24;
+
+    --glowA: rgba(125, 211, 252, 0.22);
+    --glowB: rgba(251, 191, 36, 0.14);
+
+    --bgDeep: #0c0f14;
+}
+
+/* 夜城冷（質感暗） */
+body.theme-night {
+    --bg: #0c121a;
+    --bg2: #101a26;
+
+    --card: rgba(255, 255, 255, 0.07);
+    --border: rgba(255, 255, 255, 0.13);
+
+    --text: #eaf2ff;
+    --muted: rgba(234, 242, 255, 0.74);
+
+    --accent: #4cc9f0;
+    --accent2: #b5179e;
+
+    --glowA: rgba(76, 201, 240, 0.18);
+    --glowB: rgba(181, 23, 158, 0.12);
+
+    --bgDeep: #070a10;
+}
