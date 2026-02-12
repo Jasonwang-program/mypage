@@ -322,9 +322,9 @@ body {
 /* . ==> class --> css */
 /* # ==> id --> javascript */
 /* =====================================================================
-    Travel UI Enhancements (Titles + Roller)
-    - 不新增任何 class，只補強你已存在的 title-* 與 roller 相關選擇器
-    - 以「旅遊網站」視覺為導向：清爽、溫暖、玻璃感、可點擊卡片
+  Travel UI Enhancements (Titles + Roller)
+  - 不新增任何 class，只補強你已存在的 title-* 與 roller 相關選擇器
+  - 以「旅遊網站」視覺為導向：清爽、溫暖、玻璃感、可點擊卡片
    ===================================================================== */
 
 /* ---------- Design Tokens：後續調整更方便 ---------- */
@@ -364,7 +364,7 @@ body {
 }
 
 /* =====================================================================
-    Title System：補齊你沒有的「標題/層級」視覺（h1~h4 + .h1~.h4）
+   Title System：補齊你沒有的「標題/層級」視覺（h1~h4 + .h1~.h4）
    ===================================================================== */
 
 /* 基礎標題：讓旅遊網站版面更乾淨、有層次 */
@@ -443,7 +443,7 @@ p {
 }
 
 /* =====================================================================
-    Roller：卡片 hover overlay（不新增 class，兼容 .roller01 / .roller_box / .roller-2_box）
+  Roller：卡片 hover overlay（不新增 class，兼容 .roller01 / .roller_box / .roller-2_box）
    ===================================================================== */
 
 /* 你原本有 .roller：保留其定位需求 */
@@ -552,8 +552,8 @@ p {
 }
 
 /* =====================================================================
-    Optional: 讓 title-01~04 更適合旅遊網站（保留你原本風格，但提高可讀性）
-    - 覆寫為更「乾淨」的陰影與字距，不改 class 名稱
+  Optional: 讓 title-01~04 更適合旅遊網站（保留你原本風格，但提高可讀性）
+  - 覆寫為更「乾淨」的陰影與字距，不改 class 名稱
    ===================================================================== */
 
 .title-01,
@@ -575,341 +575,68 @@ p {
         letter-spacing: 2px;
     }
 }
+/* =====================================================================
+   Material 3 (Material Theme Builder / material-color-utilities) 接入層
+   目的：
+   1) 你用做法1自動生成的 css/material-theme.css 會提供 --md-sys-color-*
+   2) 這裡把 Material tokens「映射」成你現有系統會用到的變數（--accent、--text-strong...）
+   3) 你的 roller / box / title / button 不用大改，就能跟著主題色自動換色
+   使用方式請看我回覆的步驟
+   ===================================================================== */
 
-/* =========================================================================
-    全局 UI 拋光包（中亮）
-    -由 ChatGPT 於 2026-02-12 自動添加
-    -安全保存：主要添加新變量+改進公共元素
-   ======================================================================= */
-
+/* 如果 material-theme.css 尚未載入，這些 var() 會走 fallback（你原本的 graffiti 色票） */
 :root {
-    --radius-xs: 8px;
-    --radius-sm: 12px;
-    --radius-md: 16px;
-    --radius-lg: 22px;
-    --radius-pill: 999px;
+    /* 主要品牌色（你原本用 --accent / --accent-warm） */
+    --accent: var(--md-sys-color-primary, var(--graffiti-electric-cyan));
+    --accent-warm: var(--md-sys-color-tertiary, var(--graffiti-hot-coral));
 
-    --space-1: 6px;
-    --space-2: 10px;
-    --space-3: 14px;
-    --space-4: 18px;
-    --space-5: 24px;
-    --space-6: 32px;
+    /* 文字/背景（提高全站一致性） */
+    --text-strong: var(--md-sys-color-on-surface, rgba(12, 14, 18, 0.92));
+    --text: var(--md-sys-color-on-surface-variant, rgba(20, 24, 32, 0.78));
+    --text-mute: color-mix(in srgb, var(--text) 70%, transparent);
 
-    --shadow-xs: 0 2px 10px rgba(0, 0, 0, 0.06);
-    --shadow-sm: 0 8px 22px rgba(0, 0, 0, 0.1);
-    --shadow-md: 0 14px 36px rgba(0, 0, 0, 0.14);
-    --shadow-lg: 0 22px 60px rgba(0, 0, 0, 0.18);
+    /* 表面/卡片（你原本 glass 系列） */
+    --surface: var(--md-sys-color-surface, rgba(255, 255, 255, 1));
+    --surface-variant: var(--md-sys-color-surface-variant, rgba(245, 245, 245, 1));
+    --glass-strong: color-mix(in srgb, var(--surface) 92%, white);
+    --glass: color-mix(in srgb, var(--surface) 84%, transparent);
 
-    --line-soft: rgba(0, 0, 0, 0.08);
-    --line-mid: rgba(0, 0, 0, 0.12);
-    --glass: rgba(255, 255, 255, 0.78);
-    --glass-strong: rgba(255, 255, 255, 0.9);
+    /* 邊線（outline） */
+    --line-soft: color-mix(in srgb, var(--md-sys-color-outline, #000) 12%, transparent);
+    --line-mid: color-mix(in srgb, var(--md-sys-color-outline, #000) 18%, transparent);
 
-    --text-strong: rgba(12, 14, 18, 0.92);
-    --text: rgba(20, 24, 32, 0.78);
-    --text-mute: rgba(20, 24, 32, 0.58);
-
-    --accent: var(--graffiti-electric-cyan);
-    --accent-warm: var(--graffiti-hot-coral);
-
-    --ease-out: cubic-bezier(0.2, 0.85, 0.2, 1);
-    --t-fast: 160ms;
-    --t-mid: 260ms;
-    --t-slow: 420ms;
-
-    --focus-ring: 0 0 0 4px rgba(47, 182, 196, 0.22);
-    --focus-ring-warm: 0 0 0 4px rgba(255, 90, 61, 0.2);
+    /* Focus ring：跟著 primary 走（可用性大加分） */
+    --focus-ring: 0 0 0 4px color-mix(in srgb, var(--accent) 22%, transparent);
+    --focus-ring-warm: 0 0 0 4px color-mix(in srgb, var(--accent-warm) 20%, transparent);
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
+/* 全站：用 Material 的 surface 當底色（保留你原本的漸層，但更一致） */
 body {
     color: var(--text);
-    background:
-        radial-gradient(1200px 600px at 15% -10%, rgba(47, 182, 196, 0.16), rgba(255, 255, 255, 0) 60%),
-        radial-gradient(900px 520px at 90% 0%, rgba(255, 90, 61, 0.1), rgba(255, 255, 255, 0) 55%),
-        linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(244, 244, 242, 1));
 }
 
-::selection {
-    background: rgba(47, 182, 196, 0.25);
-}
-
-* {
-    -webkit-tap-highlight-color: transparent;
-}
-
-/* 滾動條（可選） */
-::-webkit-scrollbar {
-    width: 10px;
-}
-::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.04);
-}
-::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.18);
-    border-radius: var(--radius-pill);
-    border: 2px solid rgba(255, 255, 255, 0.6);
-}
-::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 0, 0, 0.28);
-}
-
-/* Links */
-a {
-    color: inherit;
-    text-decoration: none;
-    text-underline-offset: 3px;
-    transition:
-        color var(--t-mid) var(--ease-out),
-        text-decoration-color var(--t-mid) var(--ease-out);
-}
-a:hover {
-    color: var(--accent);
-    text-decoration: underline;
-    text-decoration-color: rgba(47, 182, 196, 0.55);
-}
-
-/* Titles */
-h1,
-h2,
-h3,
-h4,
-.h1,
-.h2,
-.h3,
-.h4 {
-    color: var(--text-strong);
-}
-
-h1,
-.h1 {
-    line-height: 1.05;
-    margin-bottom: var(--space-4);
-}
-h2,
-.h2 {
-    line-height: 1.15;
-    margin-bottom: var(--space-3);
-}
-h3,
-.h3,
-h4,
-.h4 {
-    margin-bottom: var(--space-2);
-}
-
-section > h2::after,
-.section-title::after {
-    content: '';
-    display: block;
-    width: 72px;
-    height: 3px;
-    margin-top: 10px;
-    border-radius: var(--radius-pill);
-    background: linear-gradient(
-        90deg,
-        rgba(47, 182, 196, 0),
-        rgba(47, 182, 196, 0.9),
-        rgba(255, 90, 61, 0.65),
-        rgba(255, 90, 61, 0)
-    );
-    opacity: 0.9;
-}
-
-/* Box/Card */
-[class^='box'],
-[class*=' box'],
-.box {
-    border-radius: var(--radius-md);
-    background: var(--glass-strong);
-    border: 1px solid var(--line-soft);
-    box-shadow: var(--shadow-sm);
-    transition:
-        transform var(--t-mid) var(--ease-out),
-        box-shadow var(--t-mid) var(--ease-out),
-        border-color var(--t-mid) var(--ease-out),
-        filter var(--t-mid) var(--ease-out);
-}
-
-[class^='box']:hover,
-[class*=' box']:hover,
-.box:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
-    border-color: var(--line-mid);
-}
-
-/* Roller tweaks (keeps your original behavior) */
-.roller-1 {
-    border-radius: var(--radius-md);
-}
-.roller-1:active {
-    transform: translateY(-2px) scale(0.995);
-}
-
-/* Buttons */
+/* Buttons：改成吃 --accent / --accent-warm（主題換色時按鈕也會換） */
 button,
 input[type='button'],
 input[type='submit'],
 input[type='reset'],
 .btn {
-    border: 0;
-    border-radius: var(--radius-pill);
-    padding: 12px 18px;
-    font-weight: 700;
-    letter-spacing: 0.4px;
-    cursor: pointer;
-
-    color: rgba(10, 12, 18, 0.92);
-    background: linear-gradient(135deg, rgba(47, 182, 196, 0.92), rgba(255, 90, 61, 0.8));
-    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.14);
-
-    transition:
-        transform var(--t-fast) var(--ease-out),
-        filter var(--t-fast) var(--ease-out),
-        box-shadow var(--t-fast) var(--ease-out);
+    background: linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--accent) 92%, white),
+        color-mix(in srgb, var(--accent-warm) 82%, white)
+    );
 }
 
-button:hover,
-input[type='button']:hover,
-input[type='submit']:hover,
-input[type='reset']:hover,
-.btn:hover {
-    transform: translateY(-2px);
-    filter: saturate(1.07) contrast(1.02);
-    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.18);
-}
-
-button:active,
-input[type='button']:active,
-input[type='submit']:active,
-input[type='reset']:active,
-.btn:active {
-    transform: translateY(-1px) scale(0.98);
-}
-
-button[aria-pressed='false'],
-.btn-secondary,
-input[type='reset'] {
-    background: rgba(255, 255, 255, 0.9);
-    border: 1px solid var(--line-mid);
-    box-shadow: var(--shadow-xs);
-    color: var(--text-strong);
-}
-
-/* Forms */
-input[type='text'],
-input[type='email'],
-input[type='password'],
-input[type='search'],
-input[type='number'],
-select,
-textarea {
-    width: 100%;
-    padding: 12px 14px;
-    border-radius: var(--radius-sm);
-    border: 1px solid var(--line-soft);
-    background: rgba(255, 255, 255, 0.85);
-    color: var(--text-strong);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
-    transition:
-        border-color var(--t-mid) var(--ease-out),
-        box-shadow var(--t-mid) var(--ease-out),
-        transform var(--t-mid) var(--ease-out);
-    outline: none;
-}
-
-input::placeholder,
-textarea::placeholder {
-    color: rgba(20, 24, 32, 0.45);
-}
-
+/* Forms：focus 顏色跟著主題 */
 input:focus,
 select:focus,
 textarea:focus {
-    border-color: rgba(47, 182, 196, 0.55);
-    box-shadow:
-        var(--focus-ring),
-        0 16px 30px rgba(0, 0, 0, 0.1);
-    transform: translateY(-1px);
+    border-color: color-mix(in srgb, var(--accent) 55%, transparent);
 }
 
-/* 焦點可見度 */
-:focus-visible {
-    outline: none;
-    box-shadow: var(--focus-ring);
-    border-radius: 10px;
-}
-
-button:focus-visible,
-.btn:focus-visible {
-    box-shadow: var(--focus-ring-warm);
-}
-
-/* 圖片 */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-[class^='box'] img,
-[class*=' box'] img,
-.roller-1 img {
-    border-radius: var(--radius-sm);
-}
-
-/* 運動安全 */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        transition: none !important;
-        scroll-behavior: auto !important;
-    }
-}
-
-/* ================================
-    2026-02-12 UI polish overrides
-    - 列表容器、縮圖比例、內文字色與多行省略
-   ================================ */
-
-/* Contents-01 改成「列表容器」：避免整塊變大卡片（若 HTML 內有同名樣式，這段會覆蓋它） */
-.Contents-01 {
-    padding: 6px;
-    border-radius: 0;
-    box-shadow: none;
-    background: transparent;
-}
-
-/* 卡片縮圖統一比例：視覺更一致、更像正式旅遊網站 */
-.food-thumb {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: var(--roller-inner-radius);
-}
-
-/* 內文色階微調：資訊層級更清楚 */
-.roller-1 .h5 {
-    color: rgba(20, 24, 32, 0.7);
-}
-
-/* 描述多行省略：卡片高度更整齊 */
-.roller-1 p {
-    color: rgba(20, 24, 32, 0.68);
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    line-clamp: 4;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-/* 小螢幕縮圖高度略降，避免一張卡太長 */
-@media (max-width: 575.98px) {
-    .food-thumb {
-        height: 160px;
-    }
+/* Links：hover 跟著主題 */
+a:hover {
+    color: var(--accent);
+    text-decoration-color: color-mix(in srgb, var(--accent) 55%, transparent);
 }
