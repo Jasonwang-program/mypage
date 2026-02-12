@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ch6. 課堂考試-切板練習-2</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/table-rwd.css" />
+        <link rel="stylesheet" href="css/My Textured color scheme.css" />
+        <style>
+            .box01 {
+                background-image: url(images/1920x1080/picsum_id155_Christopher\ Sardegna_1920x1080.jpg);
+                height: 200px;
+                background-position: center center;
+                background-size: cover;
+            }
+
+            .box2 {
+                height: 90px;
+                background-color: var(--graffiti-acid-yellow);
+                margin-top: 5px;
+                line-height: 90px;
+            }
+
+            .box03 {
+                padding: 10px;
+                box-shadow: 2px 2px 6px 2px #ddcccc;
+                border-radius: 8px;
+                margin-top: 15px;
+            }
+
+            .box03 .h3 {
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+            /* roller .roller-1 .roller-r .roller-t .roller-b */
+            .roller {
+                position: relative;
+                overflow: hidden;
+            }
+
+            .roller .roller_box {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: linear-gradient(45deg, rgba(228, 205, 186, 0.3), rgba(214, 107, 20, 0.6));
+                left: -100%;
+                display: flex;
+                /* 垂直置中 */
+                align-items: center;
+                /* 水平置中 */
+                justify-content: center;
+                transition: left 1s;
+            }
+
+            .roller-1:hover .roller-2_box {
+                left: 0;
+            }
+
+            @media screen and (min-width: 768px) {
+                .box02 {
+                    height: 180px;
+                    line-height: 180px;
+                }
+            }
+
+            @media screen and (min-width: 992px) {
+                .box02 {
+                    width: 180px;
+                    border-radius: 50%;
+                    background-color: var(--graffiti-acid-yellow);
+                }
+            }
+
+            @media screen and (min-width: 1200px) {
+                .box02 {
+                    width: 220px;
+                    height: 220px;
+                    line-height: 220px;
+                    background-color: var(--graffiti-acid-yellow);
+                }
+            }
+
+            .box03 .h4 {
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container-lg">
+            <!-- 01 -->
+            <div class="row">
+                <div class="col-12 d-none d-sm-block">
+                    <div class="box01 bg-cover"></div>
+                </div>
+            </div>
+
+            <!-- 02 -->
+            <div class="row">
+                <div class="col-sm-6 col-md-3">
+                    <div class="box02 h1 fw-900 text-center">選單01</div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="box02 h1 fw-900 text-center">選單02</div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="box02 h1 fw-900 text-center">選單03</div>
+                </div>
+                <div class="col-sm-6 col-md-3">
+                    <div class="box02 h1 fw-900 text-center">選單04</div>
+                </div>
+            </div>
+
+            <!-- 03 -->
+            <div class="row">
+                <div class="col-md-6 col-lg-4">
+                    <div class="box03 roller-1">
+                        <div class="roller01">
+                            <a href="#" class="d-none d-lg-block btn btn-success">查看更多</a>
+                        </div>
+                        <img src="images/1600x900/picsum_id112_Zugr_1600x900.jpg" class="img-fluid" alt="" />
+                        <div class="h4 fw-900 text-center">旅遊景點介紹001</div>
+                        <p class="fw-600">
+                            最好的加強巨大印象升級吸收的話態度瞬間帝國發揮，想法包含集團一方面，已被有一定思維單位研發正好許多那位令人春天您的儘快，運用熱情聰明歡迎光臨，科技有限公司企業。
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="box03 roller-1">
+                        <div class="roller01">
+                            <a href="#" class="d-none d-lg-block btn btn-success">查看更多</a>
+                        </div>
+                        <img src="images/1600x900/picsum_id113_Zugr_1600x900.jpg" class="img-fluid" alt="" />
+                        <div class="h4 fw-900 text-center">旅遊景點介紹002</div>
+                        <p class="fw-600">
+                            最好的加強巨大印象升級吸收的話態度瞬間帝國發揮，想法包含集團一方面，已被有一定思維單位研發正好許多那位令人春天您的儘快，運用熱情聰明歡迎光臨，科技有限公司企業。
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="box03 roller-1">
+                        <div class="roller01">
+                            <a href="#" class="d-none d-lg-block btn btn-success">查看更多</a>
+                        </div>
+                        <img src="images/1600x900/picsum_id129_Charlie Foster_1600x900.jpg" class="img-fluid" alt="" />
+                        <div class="h4 fw-900 text-center">旅遊景點介紹003</div>
+                        <p class="fw-600">
+                            最好的加強巨大印象升級吸收的話態度瞬間帝國發揮，想法包含集團一方面，已被有一定思維單位研發正好許多那位令人春天您的儘快，運用熱情聰明歡迎光臨，科技有限公司企業。
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="box03 roller-1">
+                        <div class="roller01">
+                            <a href="#" class="d-none d-lg-block btn btn-success">查看更多</a>
+                        </div>
+                        <img src="images/1600x900/picsum_id88_Barcelona_1600x900.jpg" class="img-fluid" alt="" />
+                        <div class="h4 fw-900 text-center">旅遊景點介紹004</div>
+                        <p class="fw-600">
+                            最好的加強巨大印象升級吸收的話態度瞬間帝國發揮，想法包含集團一方面，已被有一定思維單位研發正好許多那位令人春天您的儘快，運用熱情聰明歡迎光臨，科技有限公司企業。
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="box03 roller-1">
+                        <div class="roller01">
+                            <a href="#" class="d-none d-lg-block btn btn-success">查看更多</a>
+                        </div>
+                        <img src="images/1600x900/picsum_id123_Mark Doda_1600x900.jpg" class="img-fluid" alt="" />
+                        <div class="h4 fw-900 text-center">旅遊景點介紹005</div>
+                        <p class="fw-600">
+                            最好的加強巨大印象升級吸收的話態度瞬間帝國發揮，想法包含集團一方面，已被有一定思維單位研發正好許多那位令人春天您的儘快，運用熱情聰明歡迎光臨，科技有限公司企業。
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="box03 roller-1">
+                        <div class="roller01">
+                            <a href="#" class="d-none d-lg-block btn btn-success">查看更多</a>
+                        </div>
+                        <img src="images/1600x900/picsum_id106_Arvee Marie_1600x900.jpg" class="img-fluid" alt="" />
+                        <div class="h4 fw-900 text-center">旅遊景點介紹006</div>
+                        <p class="fw-600">
+                            最好的加強巨大印象升級吸收的話態度瞬間帝國發揮，想法包含集團一方面，已被有一定思維單位研發正好許多那位令人春天您的儘快，運用熱情聰明歡迎光臨，科技有限公司企業。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 04 -->
+            <div class="row">
+                <div class="col-12 mt-3 d-none d-sm-block">
+                    <img src="https://fakeimg.pl/1440x120/200" class="img-fluid" />
+                </div>
+            </div>
+        </div>
+        <script src="js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

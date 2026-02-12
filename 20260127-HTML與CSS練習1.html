@@ -1,0 +1,55 @@
+<!-- !按TAB鍵呼叫HTML格式 -->
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML and CSS練習</title>
+    </head>
+    <style> 
+    /* .box然後按TAB鍵 */
+        .box {
+            /* 寬 */
+            width: 200px;
+            /* 高 */
+            height: 200px;
+            /* 顏色 */
+            background-color: #96c776;
+            border-radius: 5px;
+            box-shadow: #252525 2px 2px 2px 2px;
+            /* 內距(物件裡面的內容) */
+            /* padding: 20px; */
+            /* 固定大小 */
+            box-sizing: border-box;
+
+            /* 文字顏色 */
+            color: black;
+            /* 文字尺寸 */
+            font-size: 28px;
+            /* 文字位置 */
+            text-align: center;
+            /* 置中對齊 */
+            line-height: 200px;
+             /* 外距(相對於網頁邊界) */
+            margin: 100px;
+        }
+        .box:hover {
+            /* hover 滑鼠移到上面時的動作 */
+            background-color: #276217;
+            font-size: 40px;
+            box-shadow: 4px 4px 4px 4px #111111;
+            cursor: pointer;
+            /* BOX放大 */
+            transform: scale(1.5);
+            /* 用來控制transform動畫的速度和效果 */
+            transition: all 0.3s ease-in-out;
+            color: white;
+        }
+    </style>
+<body>
+    <!-- . > class="box" 然後按TAB鍵 -->
+    <div class="box">
+        CSS BOX
+    </div>          
+</body>
+</html>

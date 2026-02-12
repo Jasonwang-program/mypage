@@ -1,0 +1,75 @@
+1. 抓取 YOUBIKE 的資料，並顯示在表格中 2. 自行印出內容並了解含意 3. 使用 table 將重要資料列表
+ex：站點名稱、地址、可借車量數、已借出車量數、資料更新時間..等 4. 美化表格內容
+
+<!doctype html>
+<html lang="zw-TW">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>台北市 YouBike 站點資訊</title>
+        <link rel="stylesheet" href="css/bootstrap.bundle.min.css" />
+        <link rel="stylesheet" href="css/My Textured color scheme.css" />
+        <link rel="stylesheet" href="css/table-rwd.css" />
+        <style></style>
+    </head>
+
+    <body>
+        <div class="title-03 text-center" id="mytitle">台北市 YouBike 站點資訊</div>
+        <div class="container">
+            <table class="table table-rwd">
+                <thead>
+                    <tr>
+                        <th>編號</th>
+                        <th>站點名稱</th>
+                        <th>車輛總數</th>
+                        <th>已借出數</th>
+                        <th>可租借數</th>
+                    </tr>
+                </thead>
+                <tbody id="mybody"></tr>
+                    <!-- 動態產生資料列 -->
+                        <td data-th="編號">xxx</td>
+                        <td data-th="站點名稱">xxx</td>
+                        <td data-th="車輛總數">xxx</td>
+                        <td data-th="已借出數">xxx</td>
+                        <td data-th="可租借數">xxx</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <script src="js/jquery-4.0.0.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script>
+            // 主程式，讀取 YouBike opendata 並顯示資料
+            $(function () {
+                $.ajax({
+                    type: 'GET',
+                    url: 'js/youbike_immediate.json',
+                    dataType: 'json',
+                    success: showdata,
+                    error: function () {
+                        console.log('錯誤訊息：js/youbike_immediate.json')
+                    },
+                })
+            })
+
+            function showdata(data) {
+                console.log(data);
+                
+                $("#mybody").empty();
+                data.forEach(function (item) {
+                    let strHTML =
+                        `<tr>
+                        <td data-th="編號">${item.sno}</td>
+                        <td data-th="站點名稱">${item.sna}</td>
+                        <td data-th="車輛總數">${item.Quantity}</td>
+                        <td data-th="已借出數">${item.available_rent_bikes}</td>
+                        <td data-th="可租借數">${item.available_return_bikes}</td>
+                        </tr>`;
+                    $("#mybody").append(strHTML);
+                })
+            }
+        </script>
+    </body>
+</html>

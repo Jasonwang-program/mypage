@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>課堂考試-切版練習-1</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/table-rwd.css" />
+        <style>
+            .box {
+                height: 120px;
+                margin-top: 15px;
+                font-size: 48px;
+                line-height: 120px;
+            }
+
+            .roller {
+                position: relative;
+                overflow: hidden;
+            }
+            .roller .rooler_box {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(255, 255, 255, 0.5);
+                left: -100%;
+            }
+            .roller:hover .rooler_box {
+                right: 0;
+                transition: right 2s;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 d-md-none d-lg-block">
+                    <div class="box bg-success text-center fw-900">header</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-xxl-2">
+                <div class="box bg-warning text-center fw-400 roller">
+                    <div class="roller_box">
+                        01
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xxl-2">
+                <div class="box bg-warning text-center fw-400">02</div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xxl-2">
+                <div class="box bg-warning text-center fw-400">03</div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xxl-2">
+                <div class="box bg-warning text-center fw-400">04</div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xxl-2">
+                <div class="box bg-warning text-center fw-400">05</div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-xxl-2">
+                <div class="box bg-warning text-center fw-400">06</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-xl-3">
+                <div class="box bg-danger text-center fw-400">01</div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="box bg-danger text-center fw-400">02</div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="box bg-danger text-center fw-400">03</div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="box bg-danger text-center fw-400">04</div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="box bg-danger text-center fw-400">05</div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="box bg-danger text-center fw-400">06</div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="box bg-danger text-center fw-400">07</div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="box bg-danger text-center fw-400">08</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 d-none d-md-block">
+                <div class="box bg-info text-center fw-400">footer</div>
+            </div>
+        </div>
+        <script src="js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

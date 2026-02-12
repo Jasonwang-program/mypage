@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ch5. 表格練習</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/My Textured color scheme.css" />
+    <style>
+        @media screen and (max-width: 768px) {
+            .table-rwd thead {
+                display: none;
+            }
+            .table-rwd tbody tr{
+                display: block;
+                border: 1px solid var(--graffiti-deep-sea);
+                margin-bottom: 20px;
+            }
+            .table-rwd tbody tr td{
+                display: block;
+                overflow: hidden;
+            }
+            .table-rwd tbody tr td::before{
+                content: attr(data-th)" : ";
+                color: var(--graffiti-blush-pink);
+                font-size: 20px;
+                font-weight: 900;
+                float: left;
+                width: 30%;
+                text-align: right;
+                padding-right: 2em;
+            }
+            .table-rwd tbody tr td span{
+                display: block;
+                float: left;
+                width: 70%;
+            }
+        }
+    </style>
+  </head>
+  <body>
+    <div class="title-02 text-center">表格</div>
+    <div class="container">
+        <table class="table table-rwd">
+            <thead class="table-dark">
+                <tr>
+                    <th data-th="產品編號">產品編號</th>
+                    <th data-th="產品圖片">產品圖片</th>
+                    <th data-th="產品名稱">產品名稱</th>
+                    <th data-th="產品價格">產品價格</th>
+                    <th data-th="產品數量">產品數量</th>
+                    <th data-th="產品備註">產品備註</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-th="產品編號">001</td>
+                    <td data-th="產品圖片"><img src="images/1920x1080/picsum_id156_Christopher Sardegna_1920x1080.jpg" width="200" alt=""></td>
+                    <td data-th="產品名稱">美式咖啡</td>
+                    <td data-th="產品價格">100</td>
+                    <td data-th="產品數量">xxxxxxxxxxxxxxx</td>
+                    <td data-th="產品備註"><span>天堂原始碼鍵盤最近經濟臨時當地臨床原料，畢業微軟閲讀者，人們交換不可能簡體帶著肌膚幫助幫助意義這段，於是訊息，不代表並。</span></td>
+                </tr>
+                <tr>
+                    <td data-th="產品編號">002</td>
+                    <td data-th="產品圖片"><img src="images/1920x1080/picsum_id100_Tina Rataj_1920x1080.jpg" width="200" alt="片"></td>
+                    <td data-th="產品名稱">拿鐵咖啡</td>
+                    <td data-th="產品價格">200</td>
+                    <td data-th="產品數量">xxxxxxxxxxxxxxx</td>
+                    <td data-th="產品備註">造型權威服裝總體也沒你在忘記翻譯出租女性規劃造成我是，平衡嚴重用品你們的上門，網際螢幕工程，一面距。</td>
+                </tr>
+                <tr>
+                    <td data-th="產品編號">003</td>
+                    <td data-th="產品圖片"><img src="images/1920x1080/picsum_id197_Kholodnitskiy Maksim_1920x1080.jpg" width="200" alt=""></td>
+                    <td data-th="產品名稱">卡布奇諾</td>
+                    <td data-th="產品價格">250</td>
+                    <td data-th="產品數量">xxxxxxxxxxxxxxx</td>
+                    <td data-th="產品備註">自從招聘孤獨不論進入決定怎樣告訴到來正確，免費電影法人一點變得必要聲音溫度上門努力突出，一方面房產號碼完善高。</td>
+                </tr>
+    </div>
+    
+    </table>
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

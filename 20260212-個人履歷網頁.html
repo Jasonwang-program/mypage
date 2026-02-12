@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>個人履歷首頁</title>
+
+        <!-- 新的 4 檔 CSS：不再引用 My style.css -->
+        <link rel="stylesheet" href="css/01_tokens.css" />
+        <link rel="stylesheet" href="css/02_typography.css" />
+        <link rel="stylesheet" href="css/03_components.css" />
+        <link rel="stylesheet" href="css/04_layout-home.css" />
+    </head>
+
+    <body class="theme-light">
+        <!-- Top bar -->
+        <header class="topbar">
+            <div class="container topbar__inner">
+                <div class="brand">
+                    <span class="brand__dot"></span>
+                    <span class="brand__name">Jason / 個人頁</span>
+                </div>
+
+                <nav class="nav">
+                    <a class="nav__link" href="#about">關於我</a>
+                    <a class="nav__link" href="#portfolio">作品集</a>
+                    <a class="nav__link" href="#links">連結</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <!-- Hero -->
+            <section class="hero">
+                <div class="container hero__grid">
+                    <div class="hero__media">
+                        <img class="hero__img" src="images/dog03.avif" alt="主視覺" />
+                    </div>
+
+                    <div class="hero__content">
+                        <h1 class="hero__title">XXX</h1>
+                        <p class="hero__subtitle">單親爸爸認真負責</p>
+
+                        <p class="hero__desc">
+                            雞大大信箱個人說明體驗矛盾工作版面規定眾多真是，巴別的桌面女士，很上路打電話判斷新鮮收益最大看看塑膠，大股票很少群發和平數字表明神秘兩個，又補充類似交流四周難以我一解壓密碼漸漸廣告年輕人重要學生，長姓名不敢暫時我來經濟還不位於幾乎請大家促進就業，有個尤其是瀏覽風情裡面程式十年完全攝影大家你說讓我們，全新家園樣子你就數字，具有各位情形福州理論禮品美麗我去參考這個需求，三。
+                        </p>
+
+                        <div class="hero__actions">
+                            <a class="btn btn--primary" href="#portfolio">看作品集</a>
+                            <a class="btn btn--ghost" href="#about">閱讀自我介紹</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About -->
+            <section id="about" class="section">
+                <div class="container">
+                    <h2 class="section__title">關於我</h2>
+                    <p class="section__lead">
+                        建議你最後改成：你是誰、正在學什麼、想做什麼作品。先用 3~5 句就好，乾淨有力。
+                    </p>
+
+                    <div class="grid grid--2">
+                        <article class="card">
+                            <h3 class="card__title">我在學什麼</h3>
+                            <p class="card__text">HTML / CSS / JavaScript / PHP / Python...（先把結構與命名練乾淨）</p>
+                        </article>
+
+                        <article class="card">
+                            <h3 class="card__title">我想做什麼</h3>
+                            <p class="card__text">做出一個乾淨的個人頁：自介、作品集、練習成果、外部連結。</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Portfolio -->
+            <section id="portfolio" class="section section--alt">
+                <div class="container">
+                    <div class="section__head">
+                        <div>
+                            <h2 class="section__title">作品集</h2>
+                            <p class="section__lead">
+                                依「類別 → 成果」整理你十幾個練習頁。你只要更新下方清單，這裡會自動生成卡片。
+                            </p>
+                        </div>
+
+                        <div class="section__actions">
+                            <button class="chip is-active" data-filter="all" type="button">全部</button>
+                            <button class="chip" data-filter="htmlcss" type="button">HTML/CSS</button>
+                            <button class="chip" data-filter="js" type="button">JavaScript</button>
+                            <button class="chip" data-filter="php" type="button">PHP/Laravel</button>
+                            <button class="chip" data-filter="python" type="button">Python</button>
+                            <button class="chip" data-filter="other" type="button">其他</button>
+                        </div>
+                    </div>
+
+                    <div class="searchbar">
+                        <input
+                            id="q"
+                            class="searchbar__input"
+                            type="search"
+                            placeholder="搜尋作品（輸入關鍵字，例如 CRUD / API / 排版）"
+                        />
+                    </div>
+
+                    <div id="portfolioRoot" class="portfolio"></div>
+                </div>
+            </section>
+
+            <!-- Links -->
+            <section id="links" class="section">
+                <div class="container">
+                    <h2 class="section__title">連結</h2>
+                    <p class="section__lead">把你重要的外部頁面集中放這裡（研究、履歷、社群）。</p>
+
+                    <div class="grid grid--cards">
+                        <a
+                            class="card linkcard"
+                            href="https://scholar.google.com.tw/citations?hl=en&user=IlijWjkAAAAJ&view_op=list_works&gmla=ANZ5fUMyJPW71uis70-rR_fm0k1ObMSgbUq5HAc5YlnMYWaQqsEL74NfSohCFpP78dDeb5AsHOgZtOvvKKjOu8lF"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            <div class="linkcard__badge">Research</div>
+                            <h3 class="card__title">Google Scholar</h3>
+                            <p class="card__text">我的論文與引用（開新分頁）</p>
+                            <span class="linkcard__go">Open →</span>
+                        </a>
+
+                        <a class="card linkcard" href="#portfolio">
+                            <div class="linkcard__badge">Portfolio</div>
+                            <h3 class="card__title">作品集整理</h3>
+                            <p class="card__text">分類瀏覽我練習的網頁與小專案</p>
+                            <span class="linkcard__go">Go →</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Theme Switcher (右下角面板) -->
+        <div class="theme-panel" id="themePanel">
+            <button class="theme-panel__toggle" id="themeToggle" type="button" aria-label="Theme menu">🎨</button>
+
+            <div class="theme-panel__box" id="themeBox" hidden>
+                <div class="theme-panel__title">主題</div>
+
+                <div class="theme-panel__buttons">
+                    <button class="theme-btn" data-theme="theme-warm" type="button">
+                        <span class="swatch swatch--warm"></span> 暖亮
+                    </button>
+                    <button class="theme-btn" data-theme="theme-light" type="button">
+                        <span class="swatch swatch--light"></span> 中性亮
+                    </button>
+                    <button class="theme-btn" data-theme="theme-night" type="button">
+                        <span class="swatch swatch--night"></span> 夜城冷
+                    </button>
+                    <button class="theme-btn theme-btn--ghost" data-theme="default" type="button">重置</button>
+                </div>
+
+                <div class="theme-panel__hint">會自動記住你的選擇</div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container footer__inner">
+                <small>© <span id="y"></span> Jason. Built for learning.</small>
+            </div>
+        </footer>
+
+        <script>
+            // ==========================
+            // 你只要改這個清單：分類 + 作品
+            // tag 用來對應上方篩選（htmlcss / js / php / python / other）
+            // href 請填你的 html 檔案路徑（相對於 index.html）
+            // ==========================
+            const portfolioData = [
+                {
+                    id: 'cat-htmlcss',
+                    tag: 'htmlcss',
+                    title: 'HTML / CSS 版面練習',
+                    desc: '排版、卡片、RWD、基本頁面結構。',
+                    items: [
+                        {
+                            title: 'ch01 - 基礎排版',
+                            desc: '上課練習頁',
+                            href: '20260203-ch01.html',
+                            keywords: ['排版', 'HTML', 'CSS'],
+                        },
+                        {
+                            title: 'ch02 - 版面延伸',
+                            desc: '上課練習頁',
+                            href: '20260203-ch03.html',
+                            keywords: ['RWD', '容器', '卡片'],
+                        },
+                    ],
+                },
+                {
+                    id: 'cat-js',
+                    tag: 'js',
+                    title: 'JavaScript 小功能',
+                    desc: '資料渲染、事件、表單、串接。',
+                    items: [
+                        {
+                            title: '資料列表渲染',
+                            desc: '用 JS 把資料變成卡片',
+                            href: 'js-demo-list.html',
+                            keywords: ['forEach', 'DOM', '模板字串'],
+                        },
+                        {
+                            title: '搜尋 / 篩選',
+                            desc: '關鍵字篩選項目',
+                            href: 'js-demo-filter.html',
+                            keywords: ['filter', 'includes', 'input'],
+                        },
+                    ],
+                },
+                {
+                    id: 'cat-php',
+                    tag: 'php',
+                    title: 'PHP / Laravel 後台練習',
+                    desc: 'CRUD、登入、後台版面。',
+                    items: [
+                        {
+                            title: 'CRUD 練習',
+                            desc: '新增/編輯/刪除',
+                            href: 'php-crud-demo.html',
+                            keywords: ['CRUD', 'Laravel', 'Blade'],
+                        },
+                    ],
+                },
+                {
+                    id: 'cat-python',
+                    tag: 'python',
+                    title: 'Python 練習',
+                    desc: '小工具、基礎語法、資料處理。',
+                    items: [
+                        {
+                            title: '小遊戲 / 小工具',
+                            desc: '初學練習集合',
+                            href: 'python-notes.html',
+                            keywords: ['list', 'dict', '函式'],
+                        },
+                    ],
+                },
+                {
+                    id: 'cat-other',
+                    tag: 'other',
+                    title: '其他',
+                    desc: '筆記、實驗、工具、雜項。',
+                    items: [
+                        { title: '筆記整理', desc: '學習筆記入口', href: 'notes.html', keywords: ['筆記', '整理'] },
+                    ],
+                },
+            ]
+
+            // ========= utils =========
+            const $ = (sel) => document.querySelector(sel)
+            const escapeHtml = (s) =>
+                String(s).replace(
+                    /[&<>"']/g,
+                    (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]
+                )
+            const normalize = (s) =>
+                String(s || '')
+                    .toLowerCase()
+                    .trim()
+
+            function matchItem(item, q) {
+                if (!q) return true
+                const hay = [item.title, item.desc, ...(item.keywords || [])].map(normalize).join(' ')
+                return hay.includes(q)
+            }
+
+            function render({ tagFilter = 'all', q = '' } = {}) {
+                const root = $('#portfolioRoot')
+                const query = normalize(q)
+
+                const blocks = portfolioData
+                    .filter((cat) => tagFilter === 'all' || cat.tag === tagFilter)
+                    .map((cat) => {
+                        const items = (cat.items || []).filter((it) => matchItem(it, query))
+                        if (items.length === 0) return ''
+
+                        const cards = items
+                            .map(
+                                (it) => `
+              <a class="pitem" href="${escapeHtml(it.href)}" target="_blank" rel="noopener">
+                <div class="pitem__top">
+                  <div class="pitem__title">${escapeHtml(it.title)}</div>
+                  <div class="pitem__tag">${escapeHtml(cat.tag)}</div>
+                </div>
+                <div class="pitem__desc">${escapeHtml(it.desc || '')}</div>
+                <div class="pitem__meta">${escapeHtml((it.keywords || []).join(' · '))}</div>
+                <div class="pitem__go">Open →</div>
+              </a>
+            `
+                            )
+                            .join('')
+
+                        return `
+            <section class="pcat" data-tag="${escapeHtml(cat.tag)}">
+              <div class="pcat__head">
+                <div>
+                  <h3 class="pcat__title">${escapeHtml(cat.title)}</h3>
+                  <p class="pcat__desc">${escapeHtml(cat.desc || '')}</p>
+                </div>
+                <div class="pcat__count">${items.length} items</div>
+              </div>
+              <div class="pgrid">${cards}</div>
+            </section>
+          `
+                    })
+                    .join('')
+
+                root.innerHTML = blocks || `<div class="empty">找不到符合的作品。試試看換個關鍵字或切換類別。</div>`
+            }
+
+            // ========= init =========
+            document.getElementById('y').textContent = new Date().getFullYear()
+
+            const chips = Array.from(document.querySelectorAll('.chip'))
+            let currentFilter = 'all'
+
+            function setActiveChip(tag) {
+                chips.forEach((c) => c.classList.toggle('is-active', c.dataset.filter === tag))
+            }
+
+            chips.forEach((chip) => {
+                chip.addEventListener('click', () => {
+                    currentFilter = chip.dataset.filter
+                    setActiveChip(currentFilter)
+                    render({ tagFilter: currentFilter, q: $('#q').value })
+                })
+            })
+
+            $('#q').addEventListener('input', (e) => {
+                render({ tagFilter: currentFilter, q: e.target.value })
+            })
+
+            render({ tagFilter: 'all', q: '' })
+
+            // ===== Theme Switcher =====
+            ;(() => {
+                const THEMES = ['theme-warm', 'theme-light', 'theme-night']
+                const storageKey = 'site_theme'
+
+                const panel = document.getElementById('themePanel')
+                const toggle = document.getElementById('themeToggle')
+                const box = document.getElementById('themeBox')
+                const buttons = Array.from(document.querySelectorAll('.theme-btn'))
+
+                function applyTheme(theme) {
+                    // 移除舊主題
+                    document.body.classList.remove(...THEMES)
+
+                    if (theme && theme !== 'default') {
+                        document.body.classList.add(theme)
+                        localStorage.setItem(storageKey, theme)
+                    } else {
+                        localStorage.removeItem(storageKey)
+                    }
+
+                    // 更新按鈕狀態
+                    buttons.forEach((b) => {
+                        const t = b.dataset.theme
+                        b.classList.toggle('is-active', t === theme)
+                        if (theme === 'default') b.classList.toggle('is-active', t === 'default')
+                    })
+                }
+
+                // 初始化：讀取上次選擇
+                const saved = localStorage.getItem(storageKey)
+                if (saved && THEMES.includes(saved)) {
+                    applyTheme(saved)
+                } else {
+                    applyTheme('default')
+                }
+
+                // 展開/收合面板
+                toggle.addEventListener('click', () => {
+                    const willShow = box.hasAttribute('hidden')
+                    if (willShow) box.removeAttribute('hidden')
+                    else box.setAttribute('hidden', '')
+                })
+
+                // 點外面關閉
+                document.addEventListener('click', (e) => {
+                    if (!panel.contains(e.target)) box.setAttribute('hidden', '')
+                })
+
+                // 按鈕切換
+                buttons.forEach((btn) => {
+                    btn.addEventListener('click', () => {
+                        const t = btn.dataset.theme
+                        applyTheme(t)
+                    })
+                })
+            })()
+        </script>
+    </body>
+</html>

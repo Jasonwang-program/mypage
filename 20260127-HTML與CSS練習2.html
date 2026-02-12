@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>HTML and CSS 上課練習2</title>
+    </head>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            border-radius: 5px;
+            box-shadow: #252525 2px 2px 2px 2px;
+            box-sizing: border-box;
+            color: black;
+            font-size: 28px;
+            text-align: center;
+            line-height: 200px;
+            margin: 100px;
+        }
+        .box:hover {
+            background-color: orange;
+            font-size: 40px;
+            box-shadow: 4px 4px 4px 4px #111111;
+            cursor: pointer;
+            transform: scale(1.5);
+            transition: all 0.3s ease-in-out;
+            color: white;
+        }
+    </style>
+    <body>
+        <div class="box">Hello</div>
+        <div class="box">World</div>
+        <div class="box">Python</div>
+    </body>
+</html>

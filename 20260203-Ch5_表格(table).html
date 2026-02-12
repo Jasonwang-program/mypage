@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ch.5 表格(table)</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/My Textured color scheme.css" />
+        <style>
+            @media screen and (max-width: 768px) {
+                .table-rwd thead {
+                    display: none;
+                }
+
+                .table-rwd tbody tr {
+                    display: block;
+                    border: 1px solid var(--graffiti-rosewood);
+                    margin-top: 15px;
+                }
+
+                .table-rwd tbody tr td {
+                    display: block;
+                }
+                /* 偽元素 */
+                .table-rwd tbody tr td::before {
+                    content: attr(data-th) ': ';
+                    font-size: 20px;
+                    font-weight: 400;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="title-01 text-center">表格</div>
+            <table class="table table-rwd">
+                <thead class="table-dark">
+                    <tr>
+                        <th>商品編號</th>
+                        <th>商品名稱</th>
+                        <th>商品價格</th>
+                        <th>商品數量</th>
+                        <th>商品備註</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-th="商品編號">001</td>
+                        <td data-th="商品名稱">美式咖啡</td>
+                        <td data-th="商品價格">45</td>
+                        <td data-th="商品數量">10</td>
+                        <td data-th="商品備註">無糖</td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>拿鐵咖啡</td>
+                        <td>65</td>
+                        <td>10</td>
+                        <td>無糖</td>
+                    </tr>
+                    <tr>
+                        <td>003</td>
+                        <td>咖啡紅茶</td>
+                        <td>55</td>
+                        <td>10</td>
+                        <td>半糖</td>
+                    </tr>
+                    <tr>
+                        <td data-th="商品編號">004</td>
+                        <td data-th="商品名稱">抹茶拿鐵</td>
+                        <td data-th="商品價格">75</td>
+                        <td data-th="商品數量">10</td>
+                        <td data-th="商品備註">半糖</td>
+                    </tr>
+                    <tr>
+                        <td>005</td>
+                        <td>焦糖瑪奇朵</td>
+                        <td>85</td>
+                        <td>10</td>
+                        <td>半糖</td>
+                    </tr>
+                    <tr>
+                        <td>006</td>
+                        <td>香草拿鐵</td>
+                        <td>70</td>
+                        <td>10</td>
+                        <td>半糖</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

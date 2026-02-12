@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ch5. 表格</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/My Textured color scheme.css" />
+    <style>
+        table img {
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.3);
+        }
+
+        @media screen and (max-width: 768px) {
+            .table-rwd thead {
+                display: none;
+            }
+
+            .table-rwd tbody tr {
+                display: block;
+                border: 1px solid var(--graffiti-deep-sea);
+                margin-bottom: 20px;
+            }
+
+            .table-rwd tbody tr td {
+                display: block;
+                overflow: hidden;
+            }
+
+            .table-rwd tbody tr td::before {
+                content: attr(data-th)" : ";
+                color: var(--graffiti-blush-pink);
+                font-size: 14px;
+                font-weight: 900;
+                float: left;
+                width: 30%;
+                text-align: right;
+                padding-right: 2em;
+            }
+            .table-rwd tbody tr td span {
+                display: block;
+                float: left;
+                width: 70%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title-02 text-center" id="mytitle">表格-Opendata應用</div>
+    <div class="container">
+        <table class="table table-rwd">
+            <thead class="table-dark">
+                <tr>
+                    <th data-th="店家編號">店家編號</th>
+                    <th data-th="店家照片">店家照片</th>
+                    <th data-th="店家名稱">店家名稱</th>
+                    <th data-th="店家地址">店家地址</th>
+                    <th data-th="店家電話">店家電話</th>
+                    <th data-th="店家簡介">店家簡介</th>
+                </tr>
+            </thead>
+            <tbody id="mybody">
+                <tr>
+                    <td data-th="店家編號"><span>001</span></td>
+                    <td data-th="店家照片"><span><img src="images/1920x1080/picsum_id156_Christopher Sardegna_1920x1080.jpg"
+                                width="200" alt=""></span></td>
+                    <td data-th="店家名稱">美式咖啡</td>
+                    <td data-th="店家地址"><span>100</span></td>
+                    <td data-th="店家電話"><span>xxxxxxxxxxxxxxx</span></td>
+                    <td data-th="店家簡介"><span>天堂原始碼鍵盤最近經濟臨時當地臨床原料，畢業微軟閲讀者，人們交換不可能簡體帶著肌膚幫助幫助意義這段，於是訊息，不代表並。</span>
+                    </td>
+                </tr>
+    </div>
+
+    </table>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-4.0.0.js"></script>
+    <script>
+        // 主程式
+        $(function () {
+            $("#mytitle").html("地方美食店家列表");
+            console.log("大雞巴哥哥！！！要加油喔～～～");
+            // 串接 opendata API
+            $.ajax({
+                type: "GET",
+                url: "https://data.moa.gov.tw/Service/OpenData/ODwsv/ODwsvTravelFood.aspx?IsTransData=1&UnitId=193",
+                dataType: "json",
+                success: showdata,
+                error: function () {
+                    console.log("ERROR!!!");
+                }
+            });
+
+            function showdata(data) {
+                console.log(data);
+                $("#mybody").empty(); // 清空表格內容
+                data.forEach(function (item) {
+                    // console.log(item.Name);
+                    // console.log("地址" + item.City + item.Town + item.Address);
+                    // 資料防呆(若沒有提供圖片，則顯示預設圖片)
+                    let img = item.PicURL ? item.PicURL : "images/1600x900/picsum_id115_Christian Hebell_1600x900.jpg";
+                    // ?是判斷item.PicURL是否存在，若存在則使用item.PicURL，否則使用預設圖片，此一動作稱為三元運算子(ternary operator)，是一種簡潔的條件判斷語法。
+                    let tel = item.Tel ? item.Tel : "未提供電話";
+                    let hword = item.HostWords ? item.HostWords : "店家未提供簡介資料";
+                    let strHTML = `<tr>
+                                    <td data-th="店家編號"><span>${item.ID}</span></td>
+                                    <td data-th="店家照片"><span><img src="${img}"
+                                width="200" alt=""></span></td>
+                                    <td data-th="店家名稱">${item.Name}</td>
+                                    <td data-th="店家地址"><span>${item.City} ${item.Town} ${item.Address}</span></td>
+                                    <td data-th="店家電話"><span>${tel}</span></td>
+                                    <td data-th="店家簡介"><span>${hword}</span></td>
+                                    </tr>`;
+                    $("#mybody").append(strHTML);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

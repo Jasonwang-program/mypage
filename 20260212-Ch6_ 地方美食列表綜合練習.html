@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Ch6. 地方美食列表</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/table-rwd.css" />
+        <link rel="stylesheet" href="css/My style.css" />
+        <style>
+            .Contents-01 {
+                padding: 10px;
+                box-shadow: 2px 2px 6px 2px #ddcccc;
+                border-radius: 8px;
+                margin-top: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <body>
+            <div class="title-01 text-center my-4">地方美食列表</div>
+
+            <div class="container">
+                <!-- ✅ Contents-01 當「列表容器」就好：用 row + gutter -->
+                <div class="row g-4 Contents-01"></div>
+            </div>
+
+            <script src="js/bootstrap.bundle.min.js"></script>
+            <script src="js/jquery-4.0.0.js"></script>
+            <script>
+                $(function () {
+                    $.ajax({
+                        type: 'GET',
+                        url: 'js/TravelFood.json',
+                        dataType: 'json',
+                        success: showdata,
+                        error: function () {
+                            console.log('error - js/TravelFood.json')
+                        },
+                    })
+                })
+
+                function safeText(v) {
+                    // ✅ 防呆：避免 null/undefined
+                    return v === null || v === undefined || v === '' ? '—' : String(v)
+                }
+
+                function showdata(data) {
+                    const $wrap = $('.Contents-01')
+                    $wrap.empty() // ✅ 重新載入不會一直疊
+
+                    data.forEach(function (item) {
+                        let name = safeText(item.Name)
+                        let tel = safeText(item.Tel)
+                        let addr = safeText((item.City || '') + (item.Town || '') + (item.Address || ''))
+                        let desc = safeText(item.Description)
+
+                        // ✅ 三元運算子：有 PicURL 就用它，沒有就用預設圖
+                        let img = item.PicURL ? item.PicURL : 'images/No img/露出關愛智障的眼神.jpg'
+
+                        let strHtml = `
+                    <div class="col-md-6 col-lg-4 col-xl-3">
+                      <div class="roller-1 h-100">
+                        <div class="roller01">
+                            <a class="btn btn-primary" href="javascript:void(0)">查看更多</a>
+                        </div>
+
+                        <img class="w-100 food-thumb"
+                            src="${img}"
+                            alt="${name}"
+                            loading="lazy" />
+
+                        <div class="p-3">
+                            <div class="h3 text-center fw-900 mb-2">${name}</div>
+                            <div class="h5 mb-1">電話：${tel}</div>
+                            <div class="h5 mb-2">地址：${addr}</div>
+                            <p class="mb-0">${desc}</p>
+                        </div>
+                      </div>
+                    </div>
+                  `
+
+                        $('.Contents-01').append(strHtml)
+                    })
+                }
+            </script>
+        </body>
+    </body>
+</html>

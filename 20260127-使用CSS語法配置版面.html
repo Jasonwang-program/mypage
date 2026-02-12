@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習01. 使用CSS語法配置版面</title>
+    <link rel="stylesheet" href="css/My Textured color scheme.css">
+    <style>
+        body {
+            background-color: var(--graffiti-concrete-ash);
+        }
+
+        .wrapper {
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-left: auto;
+            margin-right: auto;
+            width: 1024px;
+        }
+
+        .wrapper .banner img {
+            /* 寬度 */
+            width: 100%;
+        }
+
+        nav {
+            background-color: var(--graffiti-dried-blood);
+            text-align: center;
+        }
+
+        nav ul {
+            display: inline-block;
+        }
+
+        nav ul li {
+            float: left;
+            list-style-type: none;
+        }
+
+        nav ul li a{
+            display: block;
+            background-color: var(--graffiti-brick-dust);
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-left: 20px;
+            padding-right: 20px;
+            text-decoration: none;
+            color: var(--graffiti-concrete-ash);
+            font-size: 20px;
+            margin-right: 10px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 2px 2px var(--graffiti-basement-shadow);
+        }
+
+        nav ul li a:hover{
+            background-color: var( --graffiti-burnt-ochre);
+            box-shadow: 2px 2px 2px 2px var(--graffiti-steel-mist);
+        }
+
+        .content{
+            background-color: var(--graffiti-acid-yellow);
+            padding-top: 30px;
+            padding-bottom: 30px;
+            padding-left: 50px;
+            padding-right: 50px;
+            text-align: center;
+        }
+        .content h1{
+            color: var(--graffiti-dried-blood);
+        }
+
+        .content p{
+            font-size: 20px
+        }
+        .content a{
+           display: block;
+           width: 150px;
+           height: 50px;
+           background-color: var(--graffiti-brick-dust);
+           margin-top: 0;
+           margin-bottom: 0;
+           margin-left: auto;
+           margin-right: auto;
+           text-decoration: none;
+           font-size: 20px;
+           line-height: 50px;
+           color: var(--graffiti-concrete-ash);
+        }
+        .content a:hover{
+            background-color: var( --graffiti-burnt-ochre);
+        }
+         @media screen and (max-width: 1024px) {
+            .wrapper {
+                width: 100%;
+            }
+            nav ul{
+                display: block;
+            }
+            nav ul li{
+                width: 100%;
+                
+            }
+            .content p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="banner">
+            <img src="https://picsum.photos/id/888/1440/220" alt="">
+            <!-- 選單 -->
+            <nav>
+                <ul>
+                    <li><a href="" class="fw-400">首頁</a></li>
+                    <li><a href="" class="fw-400">最新消息</a></li>
+                    <li><a href="" class="fw-400">合作店家</a></li>
+                    <li><a href="" class="fw-400">關於我們</a></li>
+                    <li><a href="" class="fw-400">聯絡我們</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content">
+            <div class="title-01">歡迎光臨</div>
+            <p>鈴聲黃金無門綠色笑着主題市政府貿易，賓館部落格獎勵私服房產，雖然深深名稱不住版面評分一天出生顯得犯罪再度，味道寂寞一份亞洲治理基地通常不能下載公主飲食結合訪問除了，警察相互前來，電器相關內容，就在死了居民患者歲月另一個說什麼，怎麼樣什麼樣兩人聯想物品計算求助心裡些什麼抓住合適，解決鏡頭，一副主板鮮。</p>
+            <p>字元看過，補充在此貿易引用透明，頻道告知一片溫柔寵物這時寫作碩士，是從關閉，妹妹取消標籤宅宅會在鄉民們支持收入主動成為，實現環保連續患者一生眼中情節電力次數還沒上述你也其中十大鏡頭，萬元得知提供攝影發送異常又是隨時一定要現實反而那位共有，人才適用於，熱門無線臺灣創建交友最多高效一定要實驗依舊皮膚研發及其各項，包含推坑王豐富竟然同學，不論查找，樂隊正式太多主。</p>
+            <p>報紙公園試題大型靈魂十年麻煩不可能一張不願意飛機禁止凱文，評估計劃一點，貨幣他說想想電話，帶來任何人加快，人生首次我的心轉移技能終於一天還是異常，心靈案例世紀，而且證明宅宅認真資金文化引擎自己的魅力為你，可以生活不太龍岡你的準確工作人員廣。</p>
+            <a href="">了解更多</a>
+        </div>
+        <div class="footer"></div>
+    </div>
+</body>
+
+</html>
